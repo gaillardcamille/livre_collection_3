@@ -23,9 +23,9 @@ class Avis
     #[ORM\Column(type: Types::SMALLINT)]
     private ?int $note = null;
 
-    #[ORM\Column]
-    private ?bool $statut = null;
-
+    #[ORM\Column(type: Types::BOOLEAN, options: ["default" => true])]
+    private bool $statut = true;
+    
     #[ORM\ManyToOne(inversedBy: 'avis')]
     private ?User $user = null;
 

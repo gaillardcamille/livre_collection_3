@@ -33,6 +33,12 @@
     </table>
 
 <h2>Avis :</h2>
+
+    {% if app.user %}
+        <a href="{{ path('app_ajouter_avis', {'livreId': livre.id, 'userId': app.user.id}) }}">Ajouter un avis</a><br>
+    {% else %}
+        <a href="{{ path('app_login') }}">Vous avez besoin d'être connecté pour laisser un avis</a><br>
+    {% endif %}
     <ul>
         {% for avi in avis %}
         {% if avi.isStatut()==1 %}
