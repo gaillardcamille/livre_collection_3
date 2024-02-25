@@ -12,10 +12,10 @@
         </h1>
 
         {% if app.user %}
-            <a>Se déconnecter</a><br>
+            <a href="{{ path('app_logout') }}">Se déconnecter</a><br>
             <a>Profil</a><br>
         {% else %}
-            <a>Se connecter</a><br>
+            <a href="{{ path('app_login') }}">Se connecter</a><br>
         {% endif %}
             <a>Admin</a><br>
 
