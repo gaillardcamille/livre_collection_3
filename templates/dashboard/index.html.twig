@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Hello!
+{% endblock %}
+
+{% block body %}
+
+    <div class="example-wrapper">
+        <h1>
+            Hello
+        </h1>
+
+        {% if app.user %}
+            <a>Se déconnecter</a><br>
+            <a>Profil</a><br>
+        {% else %}
+            <a>Se connecter</a><br>
+        {% endif %}
+            <a>Admin</a><br>
+
+            Liste des livres :
+                            
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+{% endblock %}
+                
