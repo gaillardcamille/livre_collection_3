@@ -32,5 +32,16 @@
         </tbody>
     </table>
 
+<h2>Avis :</h2>
+    <ul>
+        {% for avi in avis %}
+        {% if avi.isStatut()==1 %}
+            <li>
+                <strong>{{ avi.getUser().getEmail() }}</strong> - Note: {{ avi.note }}/5 - {{ avi.commentaire }}
+               
+            </li> {% endif %}
+        {% endfor %}
+    </ul>
+
     <a href="{{ path('app_dashboard') }}">back to list</a>
 {% endblock %}
