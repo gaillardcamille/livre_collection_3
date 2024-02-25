@@ -17,7 +17,9 @@
         {% else %}
             <a href="{{ path('app_login') }}">Se connecter</a><br>
         {% endif %}
-            <a>Admin</a><br>
+        {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('app_admin') }}">Admin</a><br>
+        {% endif %}
 
             Liste des livres :
                             
