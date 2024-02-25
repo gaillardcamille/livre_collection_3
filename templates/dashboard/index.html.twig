@@ -25,7 +25,9 @@
                             
         <ul>
             {% for livre in livres %}
-            <li><a href="{{ path('app_livre_for_user', { id: livre.id }) }}">{{ livre.Titre }}</a></li>
+            <li><a href="{{ path('app_livre_for_user', { id: livre.id }) }}">{{ livre.Titre }}</a> : - {% for categories in livre.getCategories() %}
+                {{ categories.getStyle() }} -  
+              {% endfor %}</li>
             {% endfor %}
         </ul>
     </div>

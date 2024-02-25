@@ -11,7 +11,8 @@
                 <th>Id</th>
                 <th>Titre</th>
                 <th>Description</th>
-                <th>Date_parution</th>
+                <th>Date de parution</th>
+                <th>Catégories</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -22,6 +23,12 @@
                 <td>{{ livre.titre }}</td>
                 <td>{{ livre.description }}</td>
                 <td>{{ livre.dateParution ? livre.dateParution|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    {% for categories in livre.getCategories() %}
+                        {{ categories.getStyle() }}
+                        <br />
+                    {% endfor %}
+                    </td>
                 <td>
                     <a href="{{ path('app_livre_show', {'id': livre.id}) }}">show</a>
                     <a href="{{ path('app_livre_edit', {'id': livre.id}) }}">edit</a>

@@ -23,6 +23,12 @@
                 <th>Date de parution</th>
                 <td>{{ livre.dateParution ? livre.dateParution|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
+            <tr>
+                <th>Catégories </th>
+                <td>- {% for categories in livre.getCategories() %}
+                    {{ categories.getStyle() }} -  
+                  {% endfor %}</td>
+            </tr>
         </tbody>
     </table>
 
