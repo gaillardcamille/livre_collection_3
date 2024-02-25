@@ -27,6 +27,14 @@ class DashboardController extends AbstractController
 		]);
 	}
 
+    #[Route('/{id}', name: 'app_profil_user', methods: ['GET'])]
+    public function show_user(User $user): Response
+    {
+        return $this->render('dashboard/profil_user.html.twig', [
+            'user' => $user,
+        ]);
+    }
+
 	#[Route('/Livre/{id}', name: 'app_livre_for_user', methods: ['GET'])]
 	public function show_livre(Livre $livre, AvisRepository $avisRepository): Response
 	{

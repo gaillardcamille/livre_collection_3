@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil de l'utilisateur{% endblock %}
+
+{% block body %}
+    <h1>Profil de {{ user.email }}</h1>
+
+    <h4>Vos avis</h4>
+
+        {% if user.avis is not empty %}
+        <ul>
+            {% for avis in user.avis %}
+                <li>
+                    <strong>Livre : </strong>{{ avis.livre.titre }}<br>
+                    <strong>Note : </strong>{{ avis.note }}/5<br>
+                    <strong>Commentaire : </strong>{{ avis.commentaire }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Cet utilisateur n'a laissé aucun avis pour le moment.</p>
+    {% endif %}
+{% endblock %}
