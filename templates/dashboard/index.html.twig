@@ -25,7 +25,7 @@
                             
         <ul>
             {% for livre in livres %}
-            <li><a href="{{ path('app_livre_show', { id: livre.id }) }}">{{ livre.Titre }}</a></li>
+            <li><a href="{{ path('app_livre_for_user', { id: livre.id }) }}">{{ livre.Titre }}</a></li>
             {% endfor %}
         </ul>
     </div>
